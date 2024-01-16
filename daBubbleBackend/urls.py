@@ -17,6 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from chat.views import LoginView, create_User, logout_view, RoomMessage_View, Room_View, DirectMessage_View
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('login/', LoginView.as_view()),
+    path('logout/', logout_view.as_view()),
+    path('createuser/', create_User.as_view()),
+    path('roommessage/', RoomMessage_View.as_view()),
+    path('rooms/', Room_View.as_view()),
+    path('direct/', DirectMessage_View.as_view()),
+    ]
+
